@@ -1,6 +1,5 @@
 
 * {
-color: #000000;
 font-family: 'Open Sans Condensed', Arial Narrow, Arial, sans-serif;
 font-size: 17px;
 line-height: 21px;
@@ -8,7 +7,6 @@ padding: 0px;
 border: 0px;
 margin: 0px;
 }
-
 
 
 .menu {
@@ -31,4 +29,24 @@ margin: 0px;
   font-size : 18px;
   margin-top : 10px ;
   margin-bottom : 10px; ;
+}
+
+.label_check{
+  color: white;
+	display:inline-block;
+	padding: 15px 3px 15px 3px;
+	width: 50px;
+	border-radius: 5px;
+	text-align: center;
+	margin-right: 5px;
+  margin-left : 5px;
+  font-weight : bold ;
+	cursor: pointer;
+}
+input[type=checkbox]{
+	display: none;
+}
+
+#departements {
+  text-align : center ;
 }

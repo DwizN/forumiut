@@ -6,9 +6,7 @@ $req="SELECT nom FROM departement_iut WHERE id_dep = '{$dpt}'";
       $response = $pdo->query($req);
       while($donnee=$response->fetch())
 {
-?>
-
-  <?php
+  
   echo '<div id="header">';
   echo '<center><img src="./img/iutlittoral.jpg" width = 900px <center>';
   echo '<div class="menu" style="background-color:'. couleurIndicateur($dpt) .'">';
