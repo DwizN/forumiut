@@ -40,13 +40,17 @@ if(empty($_SESSION['mail']))
                   echo 'Départements :';
                     $req='SELECT * FROM departement_iut LIMIT 8';
                           $response = $pdo->query($req);
+
                           while($donnee=$response->fetch())
                           {
-                          //  echo"<label class ='label_check' ><input type='checkbox' name='checkbox' value=".$donnee[0].">".$donnee[1]."</label>";
-                            echo '<label  value='.$donnee[0].' class="label_check" style="background-color:'. couleurIndicateur($donnee[0]) .'"><'.$donnee[1].'>'.$donnee[1].'</label>';
+                            echo '<label id='.$donnee[1].' value='.$donnee[0].' class="label_check" style="cursor:pointer; background-color:'. couleurIndicateur($donnee[0]) .'"><'.$donnee[1].'>'.$donnee[1].'</label>';
+
+                        	}
+
+
 
 }
-}
+
 echo '</div>';
 
 ?>
@@ -58,21 +62,47 @@ echo '</div>';
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-<script>
-		$(document).ready(function(){
-			$(".label_check").click(function(){
-				if($(this).css('background-color') == 'rgb(204, 204, 204)'){
-          $(this).css('background-color','rgb(50, 50, 204)');
-
-				}else{
-					$(this).css('background-color','rgb(204, 204, 204)');
 
 
-				}
-			});
 
-		});
-	</script>
+  <script>
+    $(document).ready(function(){
+      $(".label_check").click(function(){
+        if($(this).css('background-color') == 'rgb(0, 0, 0)'){
+          disableFormation(this.id);
+
+        }
+        else
+          $(this).css('background-color','rgb(0, 0, 0)');     
+      });
+
+    });
+</script>
+
+  <script type="text/javascript">
+    function disableFormation(id) {
+    var bc = "";
+
+  if (id == "GACO" || id == "GEA"  || id == "TC") {
+    bc = "#d73362";
+  }
+  else if (id == "GEII" || id == "INFO") {
+    bc = "#0093d2";
+  }
+  else if (id == "GIM") {
+    bc = "#51656f";
+  }
+  else if (id == "BIO") {
+    bc = "#89ba17";
+  }
+  else if (id == "GTE") {
+    bc = "#f08a00";
+  }
+  document.getElementById(id).style.backgroundColor = bc;
+
+}
+  </script>
+
   <script>
   function showUser(str) {
       if (str == "" | str == 0) {

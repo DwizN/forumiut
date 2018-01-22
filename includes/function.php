@@ -2,6 +2,8 @@
 function couleurIndicateur($arg) {
 $couleur = '';
  switch($arg) {
+   case '9': $couleur = '#000';
+   break;
    case '8': $couleur = '#f08a00';
    break;
    case '7': $couleur = '#89ba17';

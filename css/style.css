@@ -9,10 +9,19 @@ margin: 0px;
 }
 
 
+
+
 .menu {
   width : 900px ;
   margin : auto ;
   padding : 25px ;
+}
+
+.in {
+  width : 900px ;
+  margin : auto ;
+  background-color : white ;
+  z-index : 1 ;
 }
 
 .menu h1 {
@@ -49,4 +58,60 @@ input[type=checkbox]{
 
 #departements {
   text-align : center ;
+}
+
+
+table {
+width: 900px;
+border-collapse: collapse;
+margin : auto ;
+}
+
+table, td, th {
+border: 1px solid black;
+padding: 5px;
+}
+
+th {text-align: left;}
+
+a.infor{
+font-size : 20px ;
+display: inline-block;
+background-color: #d73362;
+text-align: center;
+color: white;
+padding: 20px 0px 20px 0px ;
+width: 200px;
+}
+
+a.stats{
+font-size : 20px ;
+display: inline-block;
+background-color: #0093d2;
+text-align: center;
+padding: 20px;
+color: white;
+width: 200px;
+}
+
+
+a.stats:hover{
+background-color: black;
+text-decoration: none;
+color : white ;
+}
+
+a.infor:hover{
+background-color: black;
+text-decoration: none;
+color : white ;
+}
+
+ul.buttons{
+display: inline-block;
+margin-bottom: 30px;
+margin-left:auto;
+margin-right: auto;
+text-align: center;
+width: 100%;
 }

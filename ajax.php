@@ -1,24 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-table {
-    width: 900px;
-    border-collapse: collapse;
-    margin : auto ;
-}
-
-table, td, th {
-    border: 1px solid black;
-    padding: 5px;
-}
-
-th {text-align: left;}
-</style>
 </head>
 <body>
-<center><ul><li><a href="index.php">Informations recueillies</a></li>
-<li><a href="index.php">Statistiques</a></li></ul></center>
+<ul class="buttons"><a class="infor" href="index.php">Informations recueillies</a>
+    <a class="stats" href="index.php">Statistiques</a></ul>
 <?php
 include 'includes/connexion.php';
 $q = intval($_GET['q']);
