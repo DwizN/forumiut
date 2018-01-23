@@ -8,14 +8,31 @@ border: 0px;
 margin: 0px;
 }
 
+html, body {
+  height : 100% ;
+}
+body {
+      background:url("../img/fond.png") no-repeat ;
+      background-position : center ;
+      z-index : 1000 ;
+}
+#header {
+  background-color : white ;
+}
 
+#header img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
 
 
 .menu {
-  width : 900px ;
-  margin : auto ;
   padding : 25px ;
+  margin : 25 0 25 0 ;
 }
+
 
 .in {
   width : 900px ;
@@ -26,19 +43,11 @@ margin: 0px;
 
 .menu h1 {
   font-weight : bold ;
+  text-align : center;
   color : white ;
   margin-bottom : 0px ;
-  display : inline-block ;
 }
 
-#menu h2 {
-  color : white ;
-  margin-bottom : 0px ;
-  float : right ;
-  font-size : 18px;
-  margin-top : 10px ;
-  margin-bottom : 10px; ;
-}
 
 .label_check{
   color: white;

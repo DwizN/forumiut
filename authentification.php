@@ -8,9 +8,10 @@ include('includes/connexion.php');
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="css/bootstrap.css" rel="stylesheet" media="all">
+    <link href="css/styleauth.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   </head>
-  <body>
+  <body class="auth">
     <?php if(isset($_GET['Authentification'])) {?>
     <div class="alert alert-danger">
   <i class="icon icon-times-circle icon-lg"></i>
@@ -37,7 +38,7 @@ include('includes/connexion.php');
                        <input type='email' id='mail' name='mail' class='form-control' placeholder='mail'/>
                        <input type='password' id='password' name='password' class='form-control' placeholder='password'/>
 
-                       <input type='checkbox' id='check' name='check'> Se souvenir de moi>
+                       <input type='checkbox' id='check' name='check'><a>Se souvenir de moi</a>
                        <input class="btn btn-primary" type="submit" name ="connexion" value="Se connecter"/>
 
                     </div>

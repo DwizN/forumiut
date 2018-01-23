@@ -15,13 +15,16 @@ if(empty($_SESSION['mail']))
   <link href="css/style.css" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 </head>
+
+
+
 <body>
-<?php include 'includes/header.php' ; ?>
-<a href ="disconnect.php">Déconnecter</a><br>
+  <div class ="in">
+    <?php include 'includes/header.php' ; ?>
+      <a href ="disconnect.php">Déconnecter</a><br>
 
               <?php if($_SESSION['dpt'] != 4 ){?>
                 <div class="form-group">
-                    <div class="menu">
                   <select class="form-control input-lg" name="users" onchange="showUser(this.value)">
                     <option value ="0">-- Forum --</option>-->
                     <?php
@@ -30,12 +33,14 @@ if(empty($_SESSION['mail']))
                           while($donnee=$response->fetch())
                           {
                     echo "<option value=\"{$donnee['id_for']}\">{$donnee['date_forum']} à {$donnee['lieu']} par {$donnee['prenom']} {$donnee['nom']}</option>";
-                  }
-
+                          }
                   ?>
-                                    </select>
-                                  </div>
-                                </div> <?php } else {
+                  </select>
+                </div>
+
+                                        <?php }
+
+                  else {
                   echo '<div id="departements">';
                   echo 'Départements :';
                     $req='SELECT * FROM departement_iut LIMIT 8';
@@ -46,17 +51,13 @@ if(empty($_SESSION['mail']))
                             echo '<label id='.$donnee[1].' value='.$donnee[0].' class="label_check" style="cursor:pointer; background-color:'. couleurIndicateur($donnee[0]) .'"><'.$donnee[1].'>'.$donnee[1].'</label>';
 
                         	}
-
-
-
-}
-
-echo '</div>';
+                        }
+                        echo '</div>';
 
 ?>
 
 
-<div id="txtHint"><b></b></div>
+<div id="txtHint"><b></b></div></div>
 
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -68,12 +69,12 @@ echo '</div>';
   <script>
     $(document).ready(function(){
       $(".label_check").click(function(){
-        if($(this).css('background-color') == 'rgb(0, 0, 0)'){
+        if($(this).css('background-color') == 'rgb(204, 204, 204)'){
           disableFormation(this.id);
 
         }
         else
-          $(this).css('background-color','rgb(0, 0, 0)');     
+          $(this).css('background-color','rgb(204, 204, 204)');
       });
 
     });
