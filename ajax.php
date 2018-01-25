@@ -4,7 +4,7 @@
 </head>
 <body>
 <ul class="buttons"><a class="infor" href="index.php">Informations recueillies</a>
-    <a class="stats" href="index.php">Statistiques</a></ul>
+    <a class="stats" href="stats.php">Statistiques</a></ul>
 <?php
 include 'includes/connexion.php';
 $q = intval($_GET['q']);
